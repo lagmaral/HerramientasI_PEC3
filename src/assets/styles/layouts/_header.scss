@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: $blue-color; /* Color azul */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10vw; /* Espaciado lateral inicial (se puede ajustar en pantallas pequeñas) */
+  height: auto; /* Altura automática para adaptarse al contenido */
+  box-sizing: border-box;
+
+  &__text {
+    color: $footer-font-default-color; /* Color blanco para contraste */
+    font-size: 1.5rem; /* Tamaño de fuente inicial */
+    text-align: center;
+    margin: 0;
+  }
+
+  &__image
+  {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+  &__subheader {
+    position: relative;
+    overflow: hidden;
+
+    &__image 
+    {
+      width: 100%;
+      max-width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    &__transicion {
+      position: absolute;
+      top: 50%;
+      left: -100%;
+      transform: translateY(-50%);
+      background-color:transparent; 
+      color: $white-color;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      animation: slideInOut 10s infinite;
+
+      &__text{
+        font-size: 2rem;
+        margin: 0;
+        color:$white-color;
+      }
+    }
+  }
+}
+
+@keyframes slideInOut {
+  0%, 100% { left: -100%; }
+  10%, 90% { left: 0; }
+}
+
+
+
+/* Estilos Responsivos */
+@media (max-width: 800px) {
+  .header {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    padding: 10px 5vw; /* Reduce el espaciado lateral */
+    text-align: center; /* Centra los elementos */
+    &__text {
+      font-size: 1.2rem; /* Reduce ligeramente el tamaño del texto */
+    }
+  }
+
+  .header__subheader__transicion__text{
+    font-size: 1.2rem; /* Reduce ligeramente el tamaño del texto */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 2vw; /* Reduce aún más el espaciado lateral */
+    &__text {
+      font-size: 1rem; /* Ajusta el texto para pantallas muy pequeñas */
+    }
+  }
+
+  .header__subheader__transicion__text{
+    font-size: 0.8rem; /* Reduce ligeramente el tamaño del texto */
+  }
+}

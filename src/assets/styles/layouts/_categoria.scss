@@ -1,0 +1,94 @@
+/* Grid principal dentro de .container__main */
+.container__main__grid {
+
+    margin-top: 2vh; /* Espacio superior para separar la sección de contenido anterior */
+    margin-bottom: 2vh;
+    display: grid; /* Configura el contenedor para usar Grid Layout */
+    //grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr)); 
+    grid-template-columns: repeat(3, 1fr);/* Define columnas flexibles */
+    gap: 1rem; /* Espacio entre los elementos de la cuadrícula */
+    padding: 1rem; /* Relleno interno para el contenedor grid */
+
+    /* Ajustes de margen para pantallas medianas (769px a 1023px de ancho) */
+    @media (min-width: 769px) and (max-width: 1023px) { grid-template-columns: repeat(2, 1fr);/* Define columnas flexibles */}
+
+    /* Ajustes de margen para pantallas pequeñas (768px o menos) */
+    @media (width <= 768px) { grid-template-columns: repeat(1, 1fr);/* Define columnas flexibles */ }
+
+
+    /* Estilos para las tarjetas dentro del grid */
+    &__card {
+        z-index: 1;
+        background-color: $white-color; /* Fondo blanco para cada tarjeta */
+        color: $index-font-color; /* Color de texto principal de la tarjeta */
+        border-radius: 10px; /* Bordes redondeados para la tarjeta */
+        border: 1px solid $blue-color; /* Borde con el color definido en la variable */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para un efecto de elevación */
+        overflow: hidden; /* Oculta el contenido que sobresale de los bordes */
+        transition: transform 0.3s ease; /* Suaviza la transición al hacer hover */
+
+        /* Efecto hover en la tarjeta */
+        &:hover {
+            transform: translateY(-0.5rem); /* Eleva la tarjeta ligeramente al pasar el cursor */
+        }
+
+        /* Imagen dentro de la tarjeta */
+        img {
+            width: 100%; /* La imagen ocupa el ancho completo de la tarjeta */
+            height: auto; /* Altura fija para las imágenes */
+            object-fit: cover; /* Recorta la imagen para llenar el contenedor sin deformarse */
+            /*clip con forma de sello*/
+            clip-path: polygon(
+                5% 0%, 10% 5%, 15% 0%, 20% 5%, 25% 0%, 30% 5%, 35% 0%, 40% 5%, 45% 0%, 
+                50% 5%, 55% 0%, 60% 5%, 65% 0%, 70% 5%, 75% 0%, 80% 5%, 85% 0%, 90% 5%, 
+                95% 0%, 100% 5%, 95% 10%, 100% 15%, 95% 20%, 100% 25%, 95% 30%, 100% 35%, 
+                95% 40%, 100% 45%, 95% 50%, 100% 55%, 95% 60%, 100% 65%, 95% 70%, 100% 75%, 
+                95% 80%, 100% 85%, 95% 90%, 100% 95%, 95% 100%, 90% 95%, 85% 100%, 80% 95%, 
+                75% 100%, 70% 95%, 65% 100%, 60% 95%, 55% 100%, 50% 95%, 45% 100%, 40% 95%, 
+                35% 100%, 30% 95%, 25% 100%, 20% 95%, 15% 100%, 10% 95%, 5% 100%, 0% 95%, 
+                5% 90%, 0% 85%, 5% 80%, 0% 75%, 5% 70%, 0% 65%, 5% 60%, 0% 55%, 5% 50%, 
+                0% 45%, 5% 40%, 0% 35%, 5% 30%, 0% 25%, 5% 20%, 0% 15%, 5% 10%, 0% 5%
+              );
+        }
+
+        img:hover{
+            animation: sello_inverso 2s infinite alternate;
+        }
+
+        /* Estilos de los títulos y párrafos dentro de la tarjeta */
+        h2, p {
+            padding: 1rem; /* Relleno interno para separar el texto de los bordes */
+        }
+    }
+}
+
+  @keyframes sello_inverso {
+    0%, 100% {
+      clip-path: polygon(
+        5% 0%, 10% 5%, 15% 0%, 20% 5%, 25% 0%, 30% 5%, 35% 0%, 40% 5%, 45% 0%, 
+        50% 5%, 55% 0%, 60% 5%, 65% 0%, 70% 5%, 75% 0%, 80% 5%, 85% 0%, 90% 5%, 
+        95% 0%, 100% 5%, 95% 10%, 100% 15%, 95% 20%, 100% 25%, 95% 30%, 100% 35%, 
+        95% 40%, 100% 45%, 95% 50%, 100% 55%, 95% 60%, 100% 65%, 95% 70%, 100% 75%, 
+        95% 80%, 100% 85%, 95% 90%, 100% 95%, 95% 100%, 90% 95%, 85% 100%, 80% 95%, 
+        75% 100%, 70% 95%, 65% 100%, 60% 95%, 55% 100%, 50% 95%, 45% 100%, 40% 95%, 
+        35% 100%, 30% 95%, 25% 100%, 20% 95%, 15% 100%, 10% 95%, 5% 100%, 0% 95%, 
+        5% 90%, 0% 85%, 5% 80%, 0% 75%, 5% 70%, 0% 65%, 5% 60%, 0% 55%, 5% 50%, 
+        0% 45%, 5% 40%, 0% 35%, 5% 30%, 0% 25%, 5% 20%, 0% 15%, 5% 10%, 0% 5%
+      );
+    }
+    50% {
+      clip-path: polygon(
+        0% 5%, 5% 0%, 10% 5%, 15% 0%, 20% 5%, 25% 0%, 30% 5%, 35% 0%, 40% 5%, 
+        45% 0%, 50% 5%, 55% 0%, 60% 5%, 65% 0%, 70% 5%, 75% 0%, 80% 5%, 85% 0%, 
+        90% 5%, 95% 0%, 100% 5%, 95% 0%, 100% 5%, 95% 10%, 100% 15%, 95% 20%, 
+        100% 25%, 95% 30%, 100% 35%, 95% 40%, 100% 45%, 95% 50%, 100% 55%, 95% 60%, 
+        100% 65%, 95% 70%, 100% 75%, 95% 80%, 100% 85%, 95% 90%, 100% 95%, 95% 100%, 
+        90% 95%, 85% 100%, 80% 95%, 75% 100%, 70% 95%, 65% 100%, 60% 95%, 55% 100%, 
+        50% 95%, 45% 100%, 40% 95%, 35% 100%, 30% 95%, 25% 100%, 20% 95%, 15% 100%, 
+        10% 95%, 5% 100%, 0% 95%, 5% 100%, 0% 95%, 5% 90%, 0% 85%, 5% 80%, 0% 75%, 
+        5% 70%, 0% 65%, 5% 60%, 0% 55%, 5% 50%, 0% 45%, 5% 40%, 0% 35%, 5% 30%
+      );
+    }
+  }
+  
+  

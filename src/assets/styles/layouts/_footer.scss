@@ -1,0 +1,85 @@
+.footer {
+  font-family: Arial, sans-serif;
+  background-color: $blue-color; /* Cambiado a un color azul */
+  color: $footer-font-default-color; /* Texto en blanco para contraste */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  padding: 20px 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.footer__nav,
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10vw; /* Espaciado lateral inicial (ajustable para pantallas pequeñas) */
+}
+
+.footer__nav__icon__image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer .footer__nav__list,
+.footer .footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px; /* Espaciado entre elementos */
+}
+
+.footer .footer__nav__list li a,
+.footer .footer__links__link {
+  color: $footer-font-default-color;
+  text-decoration: none;
+}
+
+.footer .footer__links__item {
+  display: inline-block;
+  color: $footer-font-default-color;
+}
+
+.footer__copyright {
+  text-align: center; /* Centra el texto para pantallas pequeñas */
+  color: $footer-font-default-color;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  .footer__nav,
+  .footer__content {
+    flex-direction: column; /* Cambia a diseño vertical */
+    align-items: center; /* Centra los elementos */
+    padding: 0 5vw; /* Reduce el espaciado lateral */
+    padding-top: 2vh;
+    gap: 15px; /* Espaciado entre elementos */
+    text-align: center; /* Centra el contenido */
+  }
+
+
+  .footer .footer__nav__list,
+  .footer .footer__links {
+    flex-direction: column; /* Lista de enlaces en una sola columna */
+    gap: 10px; /* Espaciado reducido entre enlaces */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__nav,
+  .footer__content {
+    padding: 0 2vw; /* Espaciado lateral mínimo */
+    padding-top: 2vh;
+  }
+
+  .footer__copyright {
+    font-size: 0.875rem; /* Texto más pequeño para pantallas pequeñas */
+  }
+}

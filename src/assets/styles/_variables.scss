@@ -1,0 +1,34 @@
+@use "sass:color";
+
+// Fuentes sans-serif
+$font-family-sans-serif: 'Roboto', 'Lato', 'Open Sans', 'Montserrat', -apple-system, blinkmacsystemfont;
+
+// Fuentes serif (manteniendo tu configuración original)
+$font-family-serif: "Georgia", "Times New Roman", serif;
+
+// Fuente principal para el cuerpo del texto
+$font-family-base: $font-family-sans-serif;
+
+// Fuente para encabezados (opcional, si quieres diferenciarlos)
+$font-family-headings: 'Montserrat', $font-family-sans-serif;
+$mq-min-width: 420px;
+
+/* Variables para colores y medidas */
+$background-color:#dddddd;
+$white-color:/*#f4e1c1;*//*#E7EBDA*/#FFFAFA;
+$blue-color:#005b8c;
+$link-color:#034797;
+$index-font-color:#2f3e4d;
+$flag-red-color:#DC291E;
+$flag-white-color:#FFFFFF;
+$flag-green-color:#66BC29;
+$flag-yellow-color:#FFC82E;
+$footer-font-default-color:$white-color;
+$black-color: #000; /* Color negro */
+$black-color-contraste: #333; /* Color negro */
+$gray-color: #999; /* Color gris */
+$padding-default: 10px 170px; /* Espaciado lateral por defecto */
+$logo-height-desktop: 300px; /* Altura del logo en escritorio */
+$logo-height-tablet: 200px; /* Altura del logo en móviles */
+$logo-height-mobile: 100px; /* Altura del logo en móviles */
+

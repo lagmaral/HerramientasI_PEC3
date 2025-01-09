@@ -1,0 +1,117 @@
+.container__main__image{
+    width: 100%;
+    height: auto;
+    transition: filter 0.5s ease-in-out;  /* Añadir transición suave si se necesita */
+    animation: increaseBrightness 5s infinite;  /* Ejecuta la animación en bucle cada 1 segundo */
+  }
+
+/* Definición de la animación con un cambio suave del brillo */
+@keyframes increaseBrightness {
+    0% {
+      filter: brightness(0.1); /* Brillo muy bajo al inicio */
+    }
+    50% {
+      filter: brightness(1.5); /* Brillo alto al 50% */
+    }
+    100% {
+      filter: brightness(0.1); /* Vuelve al brillo bajo al final */
+    }
+  }
+
+    /* Estilo para la subsección de vinos dentro del contenedor */
+    .container__main__section__wines {
+        /* Quita el estilo de viñetas de la lista */
+        list-style-type: none;   
+        /* Añade espacio en la izquierda de la lista */
+        padding-left: 1rem;
+        li {
+            /* Cambia el layout de los elementos de lista a flex para alinearlos */
+            display: flex;
+            /* Elimina el estilo de viñeta de cada ítem */
+            list-style-type: none;
+            /* Añade espacio a la izquierda de cada ítem */
+             padding-left: 2rem;
+            /* Permite posicionar el icono pseudo-elemento "before" */
+            position: relative;
+            
+        }
+    
+        li::before {
+            /* Usa Font Awesome para los iconos de lista */
+            font-family: "Font Awesome 5 Free";
+            /* Código unicode para el icono */
+            content: "\f0c8";
+            /* Define el grosor del icono */
+            font-weight: 900;
+            /* Posiciona el icono al inicio de cada ítem */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    
+         &__info {
+            /* Permite que esta sección ocupe el espacio disponible */
+            flex: 1;
+            /* Añade espacio a la derecha */
+            padding-right: 1rem;
+            /* Define el ancho como el 50% del contenedor */
+            width: 50%;
+            /* Ajusta el padding en pantallas pequeñas */
+            @media (width <= 768px) {  padding-left: 0.5rem; }
+        }
+    
+        &__image {
+            /* Define el ancho del contenedor de imagen */
+            width: 10%;
+            height: auto;
+            /* Centra el contenido de la imagen */
+            text-align: center;
+            margin: 0;
+            /* Ajusta el ancho en pantallas pequeñas */
+            @media (width <= 799px) { width: 30%;  }
+                img {
+                    /* Añade espacio a la derecha de la imagen */
+                    padding-right: 5vw;
+                    /* Establece la altura de la imagen y ajusta el ancho automáticamente */
+                    //height: 10vh;
+                    //width: auto;
+                    text-align: left;
+                    /* Ajuste del padding derecho en pantallas pequeñas */
+                    @media (width <= 768px) {  padding-right: 1vw; }
+                }
+                figcaption {
+                    /* Ajusta el tamaño y margen superior de la descripción de la imagen */
+                    font-size: 0.9em;
+                    margin-top: 0.1rem;
+                    text-align: center;
+                }
+            }
+        }
+    
+    .container__main__section__experience {
+        /* Añade espacio en la izquierda de esta sección */
+        padding-left: 1rem;
+        li {
+            /* Elimina el estilo de viñetas en la lista de experiencia */
+            list-style-type: none;
+            /* Añade espacio a la izquierda de cada ítem */
+            padding-left: 2rem;
+            /* Permite posicionar el icono pseudo-elemento "before" */
+            position: relative;
+
+        }
+        li::before {
+            /* Usa iconos de Font Awesome para cada ítem */
+            font-family: "Font Awesome 5 Free";
+            content: "\f0c8";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+    
+    .container__main__section__wines__image{
+        width: 10%;
+        height: auto;
+    }

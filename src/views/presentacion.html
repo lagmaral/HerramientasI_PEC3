@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../assets/styles/main.scss"> 
+    <title>Sobre este sitio</title>
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+  </head>
+  <body>
+    <!-- Cabecera -->
+    <include src="./views/header.html"></include>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"  width="99%" height="99%">
+      <symbol id="postal-frame" >
+        <!-- Borde ondulado en forma de sello postal -->
+        <rect x="5" y="5" width="99%" height="99%" fill="none" stroke="#333" stroke-width="5" rx="5" ry="5">
+          <animate attributeName="stroke" from="#333" to="#017acd" dur="2s" repeatCount="indefinite" />
+        </rect>
+      </symbol>
+    </svg>
+    
+
+    
+    <!-- Contenedor Principal -->
+    <div class="container">
+      <main class="container__main">
+          <section class="container__main__section">
+            <h1><i class="fas fa-map-marker-alt"></i>Ubicación y Alrededores</h1>
+            <p>Anguciana es un pintoresco <strong>pueblo de La Rioja</strong>, situado en un entorno natural privilegiado, rodeado de viñedos y montañas que forman el corazón de la región vinícola. Ubicado cerca del <em>río Tirón</em>, este lugar ofrece un clima y una tranquilidad únicos que invitan al descanso y a la contemplación. A tan solo unos kilómetros de la histórica ciudad de Haro, Anguciana es el punto de partida ideal para descubrir la <a href="https://www.larioja.org/">cultura riojana</a> y sus impresionantes paisajes. Desde aquí, los visitantes pueden explorar la <abbr title="Denominación de Origen Calificada">DOC</abbr> Rioja y disfrutar de rutas de senderismo entre viñedos y ríos, mientras se maravillan con la riqueza natural de la zona.</p>
+            <!-- Google Maps -->
+            <figure class="container__main__section__figure">
+              <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2917.529457408785!2d-2.970012284220318!3d42.56708103083473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e40827d5f3ab9%3A0x916546aaf5ae104d!2sAnguciana%2C%20La%20Rioja!5e0!3m2!1ses!2ses!4v1616594563412!5m2!1ses!2ses"
+                title="Google Maps Olabarri" allowfullscreen>
+              </iframe>
+              <figcaption lang="es">Ubicación Anguciana</figcaption>
+            </figure>
+        </section>
+        
+        <section class="container__main__section">
+            <h1><i class="fas fa-glass-cheers"></i>Fiestas y Celebraciones</h1>
+            <p>La <strong>fiesta de San Bartolomé</strong>, patrón de Anguciana, es un evento esperado por locales y visitantes cada agosto. Durante estos días, las calles se llenan de música, baile y el aroma de la gastronomía local. Una de las tradiciones más queridas es la <strong>procesión en honor al santo</strong>, donde los habitantes visten trajes típicos y se reúnen en una colorida celebración. Los visitantes pueden también disfrutar de las <strong>exhibiciones de danzas y folclore</strong> que rinden homenaje a la historia y cultura de la región. Las festividades concluyen con una cena comunitaria al aire libre, donde todos están invitados a probar los platos típicos de La Rioja.</p>
+            <!-- Video de YouTube -->
+            <figure class="container__main__section__figure">
+              <iframe loading="lazy" src="https://youtube.com/embed/Qu__Wj-bbtY" title="Fiestas de Anguciana Toto de Fuego"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <figcaption lang="es">Tradicional Toro de Fuego en Fiestas</figcaption>
+              </figure>
+          </section>
+          
+          <section class="container__main__section">
+            <h1><i class="fas fa-user-friends" aria-hidden="true"></i>La Gente de Anguciana</h1>
+            <p>Los habitantes de Anguciana se distinguen por su <q>amabilidad y hospitalidad</q>, una característica que enriquece la experiencia de visitar este pequeño rincón de La Rioja. A lo largo de generaciones, las familias de Anguciana han preservado su <abbr title="herencia cultural">cultura</abbr> y tradiciones, lo cual se manifiesta en la forma en que se organizan las festividades, el cuidado del entorno y el respeto por su historia. Conocer a la gente de Anguciana es sumergirse en una comunidad vibrante y orgullosa de sus raíces, donde cada visitante es recibido como un amigo. Pasear por sus calles es descubrir rincones con historias de antaño, contadas por quienes han vivido allí toda su vida.</p>
+            <!-- Galería de Imágenes -->
+            <div class="container__main__section__galeria">
+              <!-- Contenedor de la postal -->
+              <div class="postal-container">
+                <!-- Imagen para pantallas anchas (>= 1200px) -->    
+                <source srcset="../assets/images/anguciana01.jpg?as=webp&width=1200" type="image/webp" media="(min-width: 1200px)" />
+                <!-- Imagen para pantallas medianas (entre 800px y 1200px) -->
+                <source srcset="../assets/images/anguciana01.jpg?as=webp&width=800" type="image/webp" media="(min-width: 800px)" />
+                <!-- Imagen para pantallas pequeñas (< 800px) -->
+                <source srcset="../assets/images/anguciana01.jpg?as=webp&width=400" type="image/webp" media="(max-width: 799px)" />
+                <!-- Fallback para navegadores que no soportan <picture> -->
+                <img src="../assets/images/anguciana01.jpg?width=400" alt="Fotos de Angucian en Fiestas" class="postal-image" loading="lazy"/>
+                    
+                <!-- Marco SVG encima de la imagen -->
+                <svg class="postal-svg">
+                  <use href="#postal-frame"></use>
+                </svg>
+            </div>   
+                        <!-- Contenedor de la postal -->
+            <div class="postal-container">
+                <!-- Imagen para pantallas anchas (>= 1200px) -->    
+                <source srcset="../assets/images/anguciana02.jpg?as=webp&width=1200" type="image/webp" media="(min-width: 1200px)" />
+                <!-- Imagen para pantallas medianas (entre 800px y 1200px) -->
+                <source srcset="../assets/images/anguciana02.jpg?as=webp&width=800" type="image/webp" media="(min-width: 800px)" />
+                <!-- Imagen para pantallas pequeñas (< 800px) -->
+                <source srcset="../assets/images/anguciana02.jpg?as=webp&width=400" type="image/webp" media="(max-width: 799px)" />
+                <!-- Fallback para navegadores que no soportan <picture> -->
+                <img src="../assets/images/anguciana02.jpg?width=400" alt="Fotos de Angucian en Fiestas" class="postal-image" loading="lazy"/>
+                    
+                <!-- Marco SVG encima de la imagen -->
+                <svg class="postal-svg">
+                  <use href="#postal-frame"></use>
+                </svg>
+            </div>  
+            <div class="postal-container">
+              <!-- Imagen para pantallas anchas (>= 1200px) -->    
+              <source srcset="../assets/images/anguciana03.jpg?as=webp&width=1200" type="image/webp" media="(min-width: 1200px)" />
+              <!-- Imagen para pantallas medianas (entre 800px y 1200px) -->
+              <source srcset="../assets/images/anguciana03.jpg?as=webp&width=800" type="image/webp" media="(min-width: 800px)" />
+              <!-- Imagen para pantallas pequeñas (< 800px) -->
+              <source srcset="../assets/images/anguciana03.jpg?as=webp&width=400" type="image/webp" media="(max-width: 799px)" />
+              <!-- Fallback para navegadores que no soportan <picture> -->
+              <img src="../assets/images/anguciana03.jpg?width=400" alt="Fotos de Angucian en Fiestas" class="postal-image" loading="lazy"/>
+                  
+              <!-- Marco SVG encima de la imagen -->
+              <svg class="postal-svg">
+                <use href="#postal-frame"></use>
+              </svg>
+          </div>      
+          <div class="postal-container">
+            <!-- Imagen para pantallas anchas (>= 1200px) -->    
+            <source srcset="../assets/images/anguciana04.jpg?as=webp&width=1200" type="image/webp" media="(min-width: 1200px)" />
+            <!-- Imagen para pantallas medianas (entre 800px y 1200px) -->
+            <source srcset="../assets/images/anguciana04.jpg?as=webp&width=800" type="image/webp" media="(min-width: 800px)" />
+            <!-- Imagen para pantallas pequeñas (< 800px) -->
+            <source srcset="../assets/images/anguciana04.jpg?as=webp&width=400" type="image/webp" media="(max-width: 799px)" />
+            <!-- Fallback para navegadores que no soportan <picture> -->
+            <img src="../assets/images/anguciana04.jpg?width=400" alt="Fotos de Angucian en Fiestas" class="postal-image" loading="lazy"/>
+                
+            <!-- Marco SVG encima de la imagen -->
+            <svg class="postal-svg">
+              <use href="#postal-frame"></use>
+            </svg>
+          </div> 
+            </div>
+            
+          </section>
+
+
+
+          
+      </main>
+
+    </div>
+    <!-- Footer -->
+    <include src="./views/footer.html"></include>
+    <script defer type="module" src="../assets/scripts/app.js"></script> 
+  </body>
+</html>

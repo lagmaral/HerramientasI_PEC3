@@ -1,0 +1,105 @@
+.container__main__links {
+  /* Añade padding a los lados izquierdo y derecho del contenedor principal */
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  /* Define el color de texto principal usando la variable $link-color */
+  color: $link-color;
+
+  h1 {
+      /* Define el color del título h1 con la variable $index-font-color */
+      color: $index-font-color;
+
+      /* Agrega margen superior e inferior al título */
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      i {
+          /* Añade un espacio a la derecha de cualquier icono o elemento dentro de h1 */
+          padding-right: 1rem;
+      }
+  }
+
+  /* Aplica estilo solo al primer h1 dentro de esta sección */
+  h1:first-of-type {
+      /* Añade espacio superior al primer h1 */
+      padding-top: 1rem;
+  }
+
+  /* Crear un separador de secciones antes de cada h1 (excepto el primero) */
+  h1:not(:first-of-type)::before {
+      /* Crea un separador de líneas horizontal antes de cada h1 excepto el primero */
+      content: '';
+      display: block;
+      width: 80%; /* Controla el ancho del separador */
+      
+      /* height, background, y margin para estilizar el separador */
+      height: 2px;
+      background-color: $blue-color; /* Color del separador */
+      margin: 1rem auto; /* Espaciado y centrado del separador */
+  }
+
+  li {
+      /* Elimina la viñeta predeterminada de los elementos de lista */
+      list-style-type: none;
+      
+      /* Añade espacio superior a cada elemento de lista */
+      padding-top: 1rem;
+  }
+
+  li a {
+      /* Permite aplicar padding al enlace */
+      display: inline-block;
+
+      /* Añade padding a la izquierda del enlace */
+      padding-left: 5rem;
+
+      /* Posiciona el enlace relativo para que el icono se alinee respecto al enlace */
+      position: relative;
+
+      /* Elimina el subrayado del enlace */
+      text-decoration: none;
+
+      /* Define el color del enlace usando $link-color */
+      color: $link-color;
+
+      /* Ajusta el padding en pantallas pequeñas */
+      @media (width <= 768px) {
+          padding-left: 1rem;
+      }
+  }
+
+  li a .fa-external-link-alt {
+      /* Posiciona el icono de "enlace externo" absolutamente respecto al enlace */
+      position: absolute;
+
+      /* Coloca el icono a la derecha del texto del enlace */
+      right: -2em;
+
+      /* Centra verticalmente el icono */
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  p {
+      /* Añade padding en el lado izquierdo derecho del párrafo */
+      padding-left: 5rem;
+      padding-right: 5rem;
+
+      /* Margen inferior usando unidades de altura de la ventana */
+      margin-bottom: 2vh;
+
+      /* Espacio inferior adicional en el párrafo */
+      padding-bottom: 1rem;
+      @media (min-width: 769px) and (max-width: 1023px) { 
+        padding-left: 2rem; 
+        padding-right: 2rem;
+      }
+
+      /* Ajustes de margen para pantallas pequeñas (768px o menos) */
+      @media (width <= 768px) {      
+        padding-left: 1rem; 
+        padding-right: 1rem;
+      }
+  }
+}

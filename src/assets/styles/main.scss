@@ -1,0 +1,272 @@
+  @import "variables";
+  @import "layouts/home";
+  @import "layouts/enlaces";
+  @import "layouts/categoria";
+  @import "layouts/footer";
+  @import "layouts/header";
+  @import "layouts/detalle";
+  @import "npm:@fortawesome/fontawesome-free/css/all.css";
+  
+/* Reset global para eliminar margen y padding predeterminado de todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  color:$link-color;
+}
+/* Estilos generales del cuerpo */
+body {
+  background-color: $background-color; /* Color de fondo del cuerpo */
+  line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+}
+
+
+/* Contenedor principal */
+.container {
+    img{
+        filter: brightness(100%);
+    }
+  /* Sección de navegación dentro del contenedor */
+  &__nav {
+
+    position: relative; /* Cambia la posición de static a relative */
+    z-index: 102;        /* Ahora z-index tendrá efecto */
+      ul {
+        
+          list-style-type: none; /* Elimina el estilo de lista predeterminado */
+          padding: 0; /* Quita padding adicional */
+          display: flex; /* Coloca los elementos de lista en una fila */
+          justify-content: center; /* Centra los elementos de la lista horizontalmente */
+          background-color: $blue-color; /* Color de fondo para la barra de navegación */
+
+          li {
+              a {
+                  color: $white-color; /* Color de texto blanco para los enlaces */
+                  text-decoration: none; /* Sin subrayado en los enlaces */
+                  padding: 1rem; /* Espaciado interno para que el enlace sea más clicable */
+                  display: block; /* Hace que el enlace ocupe todo el ancho del elemento `li` */
+
+                  /* Efecto hover (al pasar el ratón por encima) */
+                  &:hover {
+                      color: $white-color;
+                      text-decoration: underline; /* Agrega subrayado en el enlace */
+                  }
+              }
+          }
+      }
+  }
+
+  /* Sección principal dentro del contenedor */
+  &__main {
+      margin-left: 20vw; /* Margen izquierdo del 20% del ancho de la ventana */
+      margin-right: 20vw; /* Margen derecho del 20% del ancho de la ventana */
+      background-color: $white-color; /* Fondo blanco para el área principal */
+
+      /* Ajustes de margen para pantallas medianas (769px a 1023px de ancho) */
+      @media (min-width: 769px) and (max-width: 1023px) { 
+          margin-left: 10vw; /* Reduce el margen izquierdo */
+          margin-right: 10vw; /* Reduce el margen derecho */
+      }
+
+      /* Ajustes de margen para pantallas pequeñas (768px o menos) */
+      @media (width <= 768px) {      
+          margin-left: 5vw; /* Reduce aún más el margen izquierdo */
+          margin-right: 5vw; /* Reduce aún más el margen derecho */
+      }
+
+      /* Elemento oculto dentro de la sección principal */
+      &__hidden {
+          display: none; /* Oculta el elemento */
+      }
+
+
+      &__section {
+        /* Agrega espacio a los lados izquierdo y derecho del contenedor principal */
+        padding-left: 2rem;
+        padding-right: 2rem;  
+        /* Agrega un margen inferior al contenedor */
+        margin-bottom: 1rem;   
+        /* Define el color del texto principal utilizando la variable $link-color */
+        color: $link-color;
+   
+        img{
+            width:100%;
+            height: auto;
+        }
+
+        h1 {
+            /* Define el color del título h1 con la variable $index-font-color */
+            color: $index-font-color;
+            /* Añade márgenes superior e inferior al título h1 */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+    
+            i {
+                /* Espacio a la derecha de un icono o elemento dentro del título h1 */
+                padding-right: 1rem;
+            }
+        }
+    
+        /* Estilos aplicados solo al primer h1 dentro de esta sección */
+        h1:first-of-type {
+            /* Añade espacio en la parte superior del primer h1 */
+            padding-top: 1rem;
+        }
+    
+        p {
+            /* Añade espacio en la izquierda del párrafo */
+            padding-left: 1rem;   
+            /* Margen inferior en unidades de altura de la ventana */
+            margin-bottom: 2vh;   
+            /* Espacio en la parte inferior del párrafo */
+            padding-bottom: 1rem;
+        }
+      
+        &__last {
+            /* Añade un margen superior a la última sección */
+            padding-top: 1rem;
+        }
+    
+        &__figure {
+            /* Centra el contenido de la sección del mapa */
+            text-align: center;
+            overflow: hidden;
+            animation: figure-animation 5s infinite ease-in-out; /* Animación continua */
+        
+            iframe {
+                width: 50vw;
+                height: 30vh;
+            }
+        
+            figcaption {
+                text-align: center;
+                font-size: 0.9em;
+                transition: color 0.3s ease;
+            }
+        }
+
+        @keyframes figure-animation{
+            0%, 100% {
+                transform: scale(1); /* Estado inicial y final normal */
+            }
+            50% {
+                transform: scale(1.05); /* Estado de "hover" */
+            }
+            
+        }
+
+        &__galeria {
+            position: relative;
+            width: 100%;
+            height: 85lvh; /* Ajusta la altura según necesites */
+            overflow: hidden;
+            @media (min-width: 401px) and (max-width: 800px) { 
+              height: 50lvh; /* Ajusta la altura según necesites */
+            }
+            @media (max-width: 400px) { 
+              height: 35lvh; /* Ajusta la altura según necesites */
+            }
+
+            picture{
+                position: absolute; /* O relativa si necesitas que se comporte dentro del flujo */
+                top: 0;
+                left: 0;
+                background-size: cover; /* Asegura que la imagen cubra el contenedor sin distorsión */
+                background-position: center; /* Centra la imagen dentro del contenedor */
+                opacity: 1; /* Cambia según la necesidad de animación */
+                animation: slide 20s infinite;    
+            }
+
+            img{
+
+                width: 100%; /* Escala el ancho al 100% del contenedor */
+                height: auto; /* Ajusta automáticamente el alto según la relación de aspecto de la imagen */
+                overflow: hidden; /* Opcional: recorta el contenido si es necesario */
+
+
+            }
+                 
+        }      
+        
+    }
+
+    i{
+        margin-right: 0.5rem;                  /* Espacio a la derecha del icono */
+        color: $index-font-color;              /* Color del icono */
+    }
+    
+  }
+
+  &__section:last-of-type {
+        /* Añade espacio superior al primer h1 */
+        padding-bottom: 1rem;
+  }
+}
+
+
+/* Retrasos para cada imagen */
+.postal-container:nth-child(1) {
+    animation-delay: -15s; /* Comienza 15s antes del ciclo */
+}
+.postal-container:nth-child(2) {
+    animation-delay: -10s; /* Comienza 10s antes del ciclo */
+}
+.postal-container:nth-child(3) {
+    animation-delay: -5s; /* Comienza 5s antes del ciclo */
+}
+.postal-container:nth-child(4) {
+    animation-delay: 0s; /* Comienza al inicio del ciclo */
+}
+
+
+  /* Animación para alternar las imágenes */
+@keyframes slide {
+    0% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+/* Contenedor de la postal */
+.postal-container {
+    //position: relative;
+    width: 100%;
+    height: auto;
+    position: absolute; /* O relativa si necesitas que se comporte dentro del flujo */
+    top: 0;
+    left: 0;
+    background-size: cover; /* Asegura que la imagen cubra el contenedor sin distorsión */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    opacity: 1; /* Cambia según la necesidad de animación */
+    animation: slide 20s infinite;    
+  }
+
+  /* Imagen de fondo dentro del contenedor */
+  .postal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* SVG como marco, posicionado sobre la imagen */
+  .postal-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite que la imagen sea interactuable si es necesario */
+  }
+  
+  
